@@ -1,0 +1,78 @@
+/* Estilos personalizados e configurações do Tailwind */
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #3b82f6 50%, #60a5fa 75%, #93c5fd 100%);
+    min-height: 100vh;
+}
+
+/* --- ANIMAÇÕES E TRANSIÇÕES --- */
+
+/* Animação de entrada para novos itens da lista */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplica a animação de entrada a cada item da lista */
+#task-list li {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Classe para a animação de saída (exclusão) */
+.task-exit {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+
+/* --- ESTILOS EXISTENTES --- */
+
+/* Efeito visual para a tarefa concluída */
+.completed span {
+    text-decoration: line-through;
+    color: #525357; /* gray-400 */
+}
+
+/* Estilo para o input de edição */
+.editing-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* Estilos modernos para botões de filtro */
+.filter-btn {
+    background: #374151;
+    color: #d1d5db;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão ativo com gradiente */
+.filter-btn.bg-blue-600 {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%) !important;
+    color: white !important;
+    border-color: transparent;
+    box-shadow: 0 8px 15px -3px rgba(59, 130, 246, 0.3);
+}
